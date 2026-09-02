@@ -1,5 +1,35 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "neverConnectToCloud": true,
-  "analytics": true
+  "analytics": true,
+  "release": {
+    "versionPlans": true,
+    "projects": ["apps/*"],
+    "projectsRelationship": "independent",
+    "git": {
+      "commit": false,
+      "tag": true,
+      "stageChanges": false
+    },
+    "version": {},
+    "releaseTag": {
+      "pattern": "{projectName}@{version}"
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        },
+        "build": {
+          "targetName": "build",
+          "configName": "tsconfig.lib.json",
+          "buildDepsName": "build-deps",
+          "watchDepsName": "watch-deps"
+        }
+      }
+    }
+  ]
 }
