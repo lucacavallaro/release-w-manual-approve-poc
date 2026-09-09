@@ -4,7 +4,9 @@
   "analytics": true,
   "release": {
     "versionPlans": true,
-    "projects": ["apps/*"],
+    "projects": [
+      "apps/*"
+    ],
     "projectsRelationship": "independent",
     "git": {
       "commit": false,
@@ -28,6 +30,17 @@
           "configName": "tsconfig.lib.json",
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
+        }
+      }
+    },
+    {
+      "plugin": "@nx/docker",
+      "options": {
+        "buildTarget": {
+          "name": "docker:build"
+        },
+        "runTarget": {
+          "name": "docker:run"
         }
       }
     }

@@ -1,1 +1,3 @@
 packages: ["apps/*"]
+allowBuilds:
+  nx: true

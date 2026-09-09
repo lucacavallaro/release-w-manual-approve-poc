@@ -1,4 +1,6 @@
 [tools]
 "npm:nx" = "latest"
 node = "24"
-pnpm = "12"
+
+[settings]
+idiomatic_version_file_enable_tools = ["pnpm"]

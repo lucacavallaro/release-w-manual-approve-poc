@@ -1,15 +1,26 @@
 {
   "name": "pingd",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "morgan": "^1.12.0"
+  },
+  "nx": {
+    "targets": {
+      "docker:build": {
+        "options": {
+          "args": [
+            "--build-context",
+            "root=../..",
+            "--tag",
+            "pingd"
+          ]
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/morgan": "^1.9.10"
   }
 }
