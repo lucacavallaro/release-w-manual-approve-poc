@@ -4,9 +4,6 @@
   "analytics": true,
   "release": {
     "versionPlans": true,
-    "projects": [
-      "apps/*"
-    ],
     "projectsRelationship": "independent",
     "git": {
       "commit": false,
@@ -16,6 +13,17 @@
     "version": {},
     "releaseTag": {
       "pattern": "{projectName}@{version}"
+    },
+    "groups": {
+      "applications": {
+        "projects": ["pingd"],
+        "docker": {
+          "registryUrl": "ghcr.io",
+          "versionSchemes": {
+            "production": "{versionActionsVersion}"
+          }
+        }
+      }
     }
   },
   "plugins": [
