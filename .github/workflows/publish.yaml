@@ -1,0 +1,14 @@
+name: Publish
+
+on:
+  registry_package: {}
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-24.04
+    env:
+      GITHUB_CTX: ${{ toJson(github) }}
+    steps:
+      - name: Print GitHub Context
+        run: echo "$GITHUB_CTX" | jq .
