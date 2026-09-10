@@ -1,4 +1,5 @@
 FROM node:24-slim
+ENV PORT=3000
 COPY --from=root pnpm-workspace.yaml pnpm-lock.yaml ./
 COPY package.json index.cjs ./apps/pingd/
 RUN corepack enable && pnpm --filter pingd ci
