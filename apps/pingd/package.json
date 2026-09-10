@@ -1,6 +1,6 @@
 {
   "name": "pingd",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "private": true,
   "dependencies": {
@@ -16,12 +16,7 @@
     "targets": {
       "docker:build": {
         "options": {
-          "args": [
-            "--build-context",
-            "root=../..",
-            "--tag",
-            "pingd"
-          ]
+          "build-context": "root=../.."
         }
       }
     }

@@ -45,7 +45,13 @@
       "plugin": "@nx/docker",
       "options": {
         "buildTarget": {
-          "name": "docker:build"
+          "name": "docker:build",
+          "args": [
+            "--platform",
+            "linux/amd64",
+            "--label",
+            "org.opencontainers.image.source=https://github.com/lucacavallaro/release-w-manual-approve-poc"
+          ]
         },
         "runTarget": {
           "name": "docker:run"
